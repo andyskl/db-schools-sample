@@ -1,0 +1,1690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SchoolsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SchoolsModelStoreContainer">
+          <EntitySet Name="ClassType" EntityType="SchoolsModel.Store.ClassType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="District" EntityType="SchoolsModel.Store.District" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employee" EntityType="SchoolsModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmployeeType" EntityType="SchoolsModel.Store.EmployeeType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PropertyType" EntityType="SchoolsModel.Store.PropertyType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuartersType" EntityType="SchoolsModel.Store.QuartersType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="School" EntityType="SchoolsModel.Store.School" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SchoolClass" EntityType="SchoolsModel.Store.SchoolClass" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SchoolQuarters" EntityType="SchoolsModel.Store.SchoolQuarters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SchoolTools" EntityType="SchoolsModel.Store.SchoolTools" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SchoolVehicles" EntityType="SchoolsModel.Store.SchoolVehicles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Subj" EntityType="SchoolsModel.Store.Subj" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ToolType" EntityType="SchoolsModel.Store.ToolType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VehicleType" EntityType="SchoolsModel.Store.VehicleType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="v_classes" EntityType="SchoolsModel.Store.v_classes" store:Type="Views" store:Schema="dbo" store:Name="v_classes">
+            <DefiningQuery>SELECT 
+      [v_classes].[Класс] AS [Класс], 
+      [v_classes].[Тип класса] AS [Тип класса], 
+      [v_classes].[Число мальчиков] AS [Число мальчиков], 
+      [v_classes].[Число девочек] AS [Число девочек], 
+      [v_classes].[Школа] AS [Школа]
+      FROM [dbo].[v_classes] AS [v_classes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_classNames" EntityType="SchoolsModel.Store.v_classNames" store:Type="Views" store:Schema="dbo" store:Name="v_classNames">
+            <DefiningQuery>SELECT 
+      [v_classNames].[nameClassType] AS [nameClassType]
+      FROM [dbo].[v_classNames] AS [v_classNames]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_employees" EntityType="SchoolsModel.Store.v_employees" store:Type="Views" store:Schema="dbo" store:Name="v_employees">
+            <DefiningQuery>SELECT 
+      [v_employees].[ФИО] AS [ФИО], 
+      [v_employees].[Пол] AS [Пол], 
+      [v_employees].[Адрес] AS [Адрес], 
+      [v_employees].[Район] AS [Район], 
+      [v_employees].[Образование] AS [Образование], 
+      [v_employees].[Номер разряда] AS [Номер разряда], 
+      [v_employees].[Место работы] AS [Место работы], 
+      [v_employees].[Вид работника] AS [Вид работника], 
+      [v_employees].[Предмет] AS [Предмет]
+      FROM [dbo].[v_employees] AS [v_employees]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_employeeTypeName" EntityType="SchoolsModel.Store.v_employeeTypeName" store:Type="Views" store:Schema="dbo" store:Name="v_employeeTypeName">
+            <DefiningQuery>SELECT 
+      [v_employeeTypeName].[nameEmployeeType] AS [nameEmployeeType]
+      FROM [dbo].[v_employeeTypeName] AS [v_employeeTypeName]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_propertyNames" EntityType="SchoolsModel.Store.v_propertyNames" store:Type="Views" store:Schema="dbo" store:Name="v_propertyNames">
+            <DefiningQuery>SELECT 
+      [v_propertyNames].[namePropertyType] AS [namePropertyType]
+      FROM [dbo].[v_propertyNames] AS [v_propertyNames]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_q2" EntityType="SchoolsModel.Store.v_q2" store:Type="Views" store:Schema="dbo" store:Name="v_q2">
+            <DefiningQuery>SELECT 
+      [v_q2].[Школа] AS [Школа], 
+      [v_q2].[Адрес] AS [Адрес], 
+      [v_q2].[ФИО директора] AS [ФИО директора]
+      FROM [dbo].[v_q2] AS [v_q2]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_q3" EntityType="SchoolsModel.Store.v_q3" store:Type="Views" store:Schema="dbo" store:Name="v_q3">
+            <DefiningQuery>SELECT 
+      [v_q3].[Имя школы] AS [Имя школы], 
+      [v_q3].[Тип собственности школы] AS [Тип собственности школы], 
+      [v_q3].[Тип собственности здания школы] AS [Тип собственности здания школы], 
+      [v_q3].[Адрес] AS [Адрес], 
+      [v_q3].[Район] AS [Район], 
+      [v_q3].[Число компьютеров] AS [Число компьютеров]
+      FROM [dbo].[v_q3] AS [v_q3]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_quartersNames" EntityType="SchoolsModel.Store.v_quartersNames" store:Type="Views" store:Schema="dbo" store:Name="v_quartersNames">
+            <DefiningQuery>SELECT 
+      [v_quartersNames].[nameQuartersType] AS [nameQuartersType]
+      FROM [dbo].[v_quartersNames] AS [v_quartersNames]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_schoolQuarters" EntityType="SchoolsModel.Store.v_schoolQuarters" store:Type="Views" store:Schema="dbo" store:Name="v_schoolQuarters">
+            <DefiningQuery>SELECT 
+      [v_schoolQuarters].[Тип помещений] AS [Тип помещений], 
+      [v_schoolQuarters].[Площадь] AS [Площадь], 
+      [v_schoolQuarters].[Школа] AS [Школа]
+      FROM [dbo].[v_schoolQuarters] AS [v_schoolQuarters]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_schools" EntityType="SchoolsModel.Store.v_schools" store:Type="Views" store:Schema="dbo" store:Name="v_schools">
+            <DefiningQuery>SELECT 
+      [v_schools].[Имя школы] AS [Имя школы], 
+      [v_schools].[Тип собственности школы] AS [Тип собственности школы], 
+      [v_schools].[Тип собственности здания школы] AS [Тип собственности здания школы], 
+      [v_schools].[Адрес] AS [Адрес], 
+      [v_schools].[Район] AS [Район], 
+      [v_schools].[Число компьютеров] AS [Число компьютеров]
+      FROM [dbo].[v_schools] AS [v_schools]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_schoolTools" EntityType="SchoolsModel.Store.v_schoolTools" store:Type="Views" store:Schema="dbo" store:Name="v_schoolTools">
+            <DefiningQuery>SELECT 
+      [v_schoolTools].[Тип станков] AS [Тип станков], 
+      [v_schoolTools].[Количество] AS [Количество], 
+      [v_schoolTools].[Школа] AS [Школа]
+      FROM [dbo].[v_schoolTools] AS [v_schoolTools]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_schoolVehicles" EntityType="SchoolsModel.Store.v_schoolVehicles" store:Type="Views" store:Schema="dbo" store:Name="v_schoolVehicles">
+            <DefiningQuery>SELECT 
+      [v_schoolVehicles].[Вид транспорта] AS [Вид транспорта], 
+      [v_schoolVehicles].[Количество] AS [Количество], 
+      [v_schoolVehicles].[Школа] AS [Школа]
+      FROM [dbo].[v_schoolVehicles] AS [v_schoolVehicles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_subjNames" EntityType="SchoolsModel.Store.v_subjNames" store:Type="Views" store:Schema="dbo" store:Name="v_subjNames">
+            <DefiningQuery>SELECT 
+      [v_subjNames].[nameSubject] AS [nameSubject]
+      FROM [dbo].[v_subjNames] AS [v_subjNames]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_toolsNames" EntityType="SchoolsModel.Store.v_toolsNames" store:Type="Views" store:Schema="dbo" store:Name="v_toolsNames">
+            <DefiningQuery>SELECT 
+      [v_toolsNames].[nameToolType] AS [nameToolType]
+      FROM [dbo].[v_toolsNames] AS [v_toolsNames]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_vehicleTypeNames" EntityType="SchoolsModel.Store.v_vehicleTypeNames" store:Type="Views" store:Schema="dbo" store:Name="v_vehicleTypeNames">
+            <DefiningQuery>SELECT 
+      [v_vehicleTypeNames].[nameVehicleType] AS [nameVehicleType]
+      FROM [dbo].[v_vehicleTypeNames] AS [v_vehicleTypeNames]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Employee_district" Association="SchoolsModel.Store.FK_Employee_district">
+            <End Role="District" EntitySet="District" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_EmployeeType" Association="SchoolsModel.Store.FK_Employee_EmployeeType">
+            <End Role="EmployeeType" EntitySet="EmployeeType" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_School" Association="SchoolsModel.Store.FK_Employee_School">
+            <End Role="School" EntitySet="School" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Subj" Association="SchoolsModel.Store.FK_Employee_Subj">
+            <End Role="Subj" EntitySet="Subj" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_School_District" Association="SchoolsModel.Store.FK_School_District">
+            <End Role="District" EntitySet="District" />
+            <End Role="School" EntitySet="School" />
+          </AssociationSet>
+          <AssociationSet Name="FK_School_PropertyType" Association="SchoolsModel.Store.FK_School_PropertyType">
+            <End Role="PropertyType" EntitySet="PropertyType" />
+            <End Role="School" EntitySet="School" />
+          </AssociationSet>
+          <AssociationSet Name="FK_School_PropertyType1" Association="SchoolsModel.Store.FK_School_PropertyType1">
+            <End Role="PropertyType" EntitySet="PropertyType" />
+            <End Role="School" EntitySet="School" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolClass_ClassType" Association="SchoolsModel.Store.FK_SchoolClass_ClassType">
+            <End Role="ClassType" EntitySet="ClassType" />
+            <End Role="SchoolClass" EntitySet="SchoolClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolClass_School" Association="SchoolsModel.Store.FK_SchoolClass_School">
+            <End Role="School" EntitySet="School" />
+            <End Role="SchoolClass" EntitySet="SchoolClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolQuarters_QuartersType" Association="SchoolsModel.Store.FK_SchoolQuarters_QuartersType">
+            <End Role="QuartersType" EntitySet="QuartersType" />
+            <End Role="SchoolQuarters" EntitySet="SchoolQuarters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolQuarters_School" Association="SchoolsModel.Store.FK_SchoolQuarters_School">
+            <End Role="School" EntitySet="School" />
+            <End Role="SchoolQuarters" EntitySet="SchoolQuarters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolTools_School" Association="SchoolsModel.Store.FK_SchoolTools_School">
+            <End Role="School" EntitySet="School" />
+            <End Role="SchoolTools" EntitySet="SchoolTools" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolTools_ToolType" Association="SchoolsModel.Store.FK_SchoolTools_ToolType">
+            <End Role="ToolType" EntitySet="ToolType" />
+            <End Role="SchoolTools" EntitySet="SchoolTools" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolVehicles_School" Association="SchoolsModel.Store.FK_SchoolVehicles_School">
+            <End Role="School" EntitySet="School" />
+            <End Role="SchoolVehicles" EntitySet="SchoolVehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolVehicles_VehicleType" Association="SchoolsModel.Store.FK_SchoolVehicles_VehicleType">
+            <End Role="VehicleType" EntitySet="VehicleType" />
+            <End Role="SchoolVehicles" EntitySet="SchoolVehicles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ClassType">
+          <Key>
+            <PropertyRef Name="idClassType" />
+          </Key>
+          <Property Name="idClassType" Type="numeric" Nullable="false" Precision="1" />
+          <Property Name="nameClassType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="idDistrict" />
+          </Key>
+          <Property Name="idDistrict" Type="numeric" Nullable="false" Precision="2" />
+          <Property Name="nameDistrict" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="idEmployee" />
+          </Key>
+          <Property Name="idEmployee" Type="numeric" Nullable="false" Precision="7" />
+          <Property Name="idSchool" Type="numeric" Precision="10" />
+          <Property Name="idEmployeeType" Type="numeric" Precision="1" />
+          <Property Name="nameEmployee" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="numeric" Precision="1" />
+          <Property Name="address" Type="varchar" MaxLength="200" />
+          <Property Name="education" Type="varchar" MaxLength="100" />
+          <Property Name="rank" Type="numeric" Precision="2" />
+          <Property Name="idSubject" Type="numeric" Precision="2" />
+          <Property Name="idDistrict" Type="numeric" Precision="2" />
+        </EntityType>
+        <EntityType Name="EmployeeType">
+          <Key>
+            <PropertyRef Name="idEmployeeType" />
+          </Key>
+          <Property Name="idEmployeeType" Type="numeric" Nullable="false" Precision="1" />
+          <Property Name="nameEmployeeType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PropertyType">
+          <Key>
+            <PropertyRef Name="idPropertyType" />
+          </Key>
+          <Property Name="idPropertyType" Type="numeric" Nullable="false" Precision="1" />
+          <Property Name="namePropertyType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="QuartersType">
+          <Key>
+            <PropertyRef Name="idQuartersType" />
+          </Key>
+          <Property Name="idQuartersType" Type="numeric" Nullable="false" Precision="1" />
+          <Property Name="nameQuartersType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="School">
+          <Key>
+            <PropertyRef Name="idSchool" />
+          </Key>
+          <Property Name="idSchool" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="idSchoolPropertyType" Type="numeric" Precision="1" />
+          <Property Name="idSchoolBuildingPropertyType" Type="numeric" Precision="1" />
+          <Property Name="nameSchool" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="computersAmount" Type="numeric" Precision="3" />
+          <Property Name="address" Type="varchar" MaxLength="100" />
+          <Property Name="idDistrict" Type="numeric" Precision="2" />
+        </EntityType>
+        <EntityType Name="SchoolClass">
+          <Key>
+            <PropertyRef Name="idSchool" />
+            <PropertyRef Name="idClass" />
+          </Key>
+          <Property Name="idSchool" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="idClass" Type="numeric" Nullable="false" Precision="2" />
+          <Property Name="idClassType" Type="numeric" Nullable="false" Precision="1" />
+          <Property Name="boysAmount" Type="numeric" Nullable="false" Precision="3" />
+          <Property Name="girlsAmount" Type="numeric" Nullable="false" Precision="3" />
+          <Property Name="nameClass" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SchoolQuarters">
+          <Key>
+            <PropertyRef Name="idSchool" />
+            <PropertyRef Name="idQuartersType" />
+          </Key>
+          <Property Name="idSchool" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="idQuartersType" Type="numeric" Nullable="false" Precision="1" />
+          <Property Name="area" Type="numeric" Precision="5" />
+        </EntityType>
+        <EntityType Name="SchoolTools">
+          <Key>
+            <PropertyRef Name="idSchool" />
+            <PropertyRef Name="idToolType" />
+          </Key>
+          <Property Name="idSchool" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="idToolType" Type="numeric" Nullable="false" Precision="1" />
+          <Property Name="amount" Type="numeric" Precision="3" />
+        </EntityType>
+        <EntityType Name="SchoolVehicles">
+          <Key>
+            <PropertyRef Name="idSchool" />
+            <PropertyRef Name="idVehicleType" />
+          </Key>
+          <Property Name="idSchool" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="idVehicleType" Type="numeric" Nullable="false" Precision="1" />
+          <Property Name="amount" Type="numeric" Precision="2" />
+        </EntityType>
+        <EntityType Name="Subj">
+          <Key>
+            <PropertyRef Name="idSubject" />
+          </Key>
+          <Property Name="idSubject" Type="numeric" Nullable="false" Precision="2" />
+          <Property Name="nameSubject" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ToolType">
+          <Key>
+            <PropertyRef Name="idToolType" />
+          </Key>
+          <Property Name="idToolType" Type="numeric" Nullable="false" Precision="1" />
+          <Property Name="nameToolType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VehicleType">
+          <Key>
+            <PropertyRef Name="idVehicleType" />
+          </Key>
+          <Property Name="idVehicleType" Type="numeric" Nullable="false" Precision="1" />
+          <Property Name="nameVehicleType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_classes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_classes">
+          
+          <Key>
+            <PropertyRef Name="Школа" />
+            <PropertyRef Name="Класс" />
+          </Key>
+          <Property Name="Класс" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Тип класса" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Число мальчиков" Type="numeric" Nullable="false" Precision="3" />
+          <Property Name="Число девочек" Type="numeric" Nullable="false" Precision="3" />
+          <Property Name="Школа" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_classNames' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_classNames">
+          <Key>
+            <PropertyRef Name="nameClassType" />
+          </Key>
+          <Property Name="nameClassType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_employees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_employees">
+          <Key>
+            
+            
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="Адрес" />
+          </Key>
+          <Property Name="ФИО" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Пол" Type="varchar" MaxLength="7" />
+          <Property Name="Адрес" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Район" Type="varchar" MaxLength="50" />
+          <Property Name="Образование" Type="varchar" MaxLength="100" />
+          <Property Name="Номер разряда" Type="numeric" Precision="2" />
+          <Property Name="Место работы" Type="varchar" MaxLength="100" />
+          <Property Name="Вид работника" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Предмет" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_employeeTypeName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_employeeTypeName">
+          <Key>
+            <PropertyRef Name="nameEmployeeType" />
+          </Key>
+          <Property Name="nameEmployeeType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_propertyNames' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_propertyNames">
+          <Key>
+            <PropertyRef Name="namePropertyType" />
+          </Key>
+          <Property Name="namePropertyType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_q2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_q2">
+          <Key>
+            <PropertyRef Name="Школа" />
+          </Key>
+          <Property Name="Школа" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Адрес" Type="varchar" MaxLength="100" />
+          <Property Name="ФИО директора" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_q3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_q3">
+          <Key>
+            <PropertyRef Name="Тип собственности школы" />
+            <PropertyRef Name="Тип собственности здания школы" />
+          </Key>
+          <Property Name="Имя школы" Type="varchar" MaxLength="100" />
+          <Property Name="Тип собственности школы" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Тип собственности здания школы" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Адрес" Type="varchar" MaxLength="100" />
+          <Property Name="Район" Type="varchar" MaxLength="50" />
+          <Property Name="Число компьютеров" Type="numeric" Precision="3" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_quartersNames' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_quartersNames">
+          <Key>
+            <PropertyRef Name="nameQuartersType" />
+          </Key>
+          <Property Name="nameQuartersType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_schoolQuarters' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_schoolQuarters">
+          <Key>
+            <PropertyRef Name="Тип помещений" />
+            <PropertyRef Name="Школа" />
+          </Key>
+          <Property Name="Тип помещений" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Площадь" Type="numeric" Precision="5" />
+          <Property Name="Школа" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_schools' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_schools">
+          <Key>
+            
+            
+            <PropertyRef Name="Имя школы" />
+          </Key>
+          <Property Name="Имя школы" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Тип собственности школы" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Тип собственности здания школы" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Адрес" Type="varchar" MaxLength="100" />
+          <Property Name="Район" Type="varchar" MaxLength="50" />
+          <Property Name="Число компьютеров" Type="numeric" Precision="3" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_schoolTools' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_schoolTools">
+          <Key>
+            <PropertyRef Name="Тип станков" />
+            <PropertyRef Name="Школа" />
+          </Key>
+          <Property Name="Тип станков" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Количество" Type="numeric" Precision="3" />
+          <Property Name="Школа" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_schoolVehicles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_schoolVehicles">
+          <Key>
+            <PropertyRef Name="Вид транспорта" />
+            <PropertyRef Name="Школа" />
+          </Key>
+          <Property Name="Вид транспорта" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Количество" Type="numeric" Precision="2" />
+          <Property Name="Школа" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_subjNames' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_subjNames">
+          <Key>
+            <PropertyRef Name="nameSubject" />
+          </Key>
+          <Property Name="nameSubject" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_toolsNames' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_toolsNames">
+          <Key>
+            <PropertyRef Name="nameToolType" />
+          </Key>
+          <Property Name="nameToolType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Schools.dbo.v_vehicleTypeNames' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="v_vehicleTypeNames">
+          <Key>
+            <PropertyRef Name="nameVehicleType" />
+          </Key>
+          <Property Name="nameVehicleType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Employee_district">
+          <End Role="District" Type="SchoolsModel.Store.District" Multiplicity="0..1" />
+          <End Role="Employee" Type="SchoolsModel.Store.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="District">
+              <PropertyRef Name="idDistrict" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="idDistrict" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_EmployeeType">
+          <End Role="EmployeeType" Type="SchoolsModel.Store.EmployeeType" Multiplicity="0..1" />
+          <End Role="Employee" Type="SchoolsModel.Store.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeType">
+              <PropertyRef Name="idEmployeeType" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="idEmployeeType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_School">
+          <End Role="School" Type="SchoolsModel.Store.School" Multiplicity="0..1" />
+          <End Role="Employee" Type="SchoolsModel.Store.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="idSchool" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="idSchool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Subj">
+          <End Role="Subj" Type="SchoolsModel.Store.Subj" Multiplicity="0..1" />
+          <End Role="Employee" Type="SchoolsModel.Store.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subj">
+              <PropertyRef Name="idSubject" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="idSubject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_School_District">
+          <End Role="District" Type="SchoolsModel.Store.District" Multiplicity="0..1" />
+          <End Role="School" Type="SchoolsModel.Store.School" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="District">
+              <PropertyRef Name="idDistrict" />
+            </Principal>
+            <Dependent Role="School">
+              <PropertyRef Name="idDistrict" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_School_PropertyType">
+          <End Role="PropertyType" Type="SchoolsModel.Store.PropertyType" Multiplicity="0..1" />
+          <End Role="School" Type="SchoolsModel.Store.School" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyType">
+              <PropertyRef Name="idPropertyType" />
+            </Principal>
+            <Dependent Role="School">
+              <PropertyRef Name="idSchoolPropertyType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_School_PropertyType1">
+          <End Role="PropertyType" Type="SchoolsModel.Store.PropertyType" Multiplicity="0..1" />
+          <End Role="School" Type="SchoolsModel.Store.School" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyType">
+              <PropertyRef Name="idPropertyType" />
+            </Principal>
+            <Dependent Role="School">
+              <PropertyRef Name="idSchoolBuildingPropertyType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolClass_ClassType">
+          <End Role="ClassType" Type="SchoolsModel.Store.ClassType" Multiplicity="1" />
+          <End Role="SchoolClass" Type="SchoolsModel.Store.SchoolClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassType">
+              <PropertyRef Name="idClassType" />
+            </Principal>
+            <Dependent Role="SchoolClass">
+              <PropertyRef Name="idClassType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolClass_School">
+          <End Role="School" Type="SchoolsModel.Store.School" Multiplicity="1" />
+          <End Role="SchoolClass" Type="SchoolsModel.Store.SchoolClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="idSchool" />
+            </Principal>
+            <Dependent Role="SchoolClass">
+              <PropertyRef Name="idSchool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolQuarters_QuartersType">
+          <End Role="QuartersType" Type="SchoolsModel.Store.QuartersType" Multiplicity="1" />
+          <End Role="SchoolQuarters" Type="SchoolsModel.Store.SchoolQuarters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuartersType">
+              <PropertyRef Name="idQuartersType" />
+            </Principal>
+            <Dependent Role="SchoolQuarters">
+              <PropertyRef Name="idQuartersType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolQuarters_School">
+          <End Role="School" Type="SchoolsModel.Store.School" Multiplicity="1" />
+          <End Role="SchoolQuarters" Type="SchoolsModel.Store.SchoolQuarters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="idSchool" />
+            </Principal>
+            <Dependent Role="SchoolQuarters">
+              <PropertyRef Name="idSchool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolTools_School">
+          <End Role="School" Type="SchoolsModel.Store.School" Multiplicity="1" />
+          <End Role="SchoolTools" Type="SchoolsModel.Store.SchoolTools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="idSchool" />
+            </Principal>
+            <Dependent Role="SchoolTools">
+              <PropertyRef Name="idSchool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolTools_ToolType">
+          <End Role="ToolType" Type="SchoolsModel.Store.ToolType" Multiplicity="1" />
+          <End Role="SchoolTools" Type="SchoolsModel.Store.SchoolTools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ToolType">
+              <PropertyRef Name="idToolType" />
+            </Principal>
+            <Dependent Role="SchoolTools">
+              <PropertyRef Name="idToolType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolVehicles_School">
+          <End Role="School" Type="SchoolsModel.Store.School" Multiplicity="1" />
+          <End Role="SchoolVehicles" Type="SchoolsModel.Store.SchoolVehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="idSchool" />
+            </Principal>
+            <Dependent Role="SchoolVehicles">
+              <PropertyRef Name="idSchool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolVehicles_VehicleType">
+          <End Role="VehicleType" Type="SchoolsModel.Store.VehicleType" Multiplicity="1" />
+          <End Role="SchoolVehicles" Type="SchoolsModel.Store.SchoolVehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleType">
+              <PropertyRef Name="idVehicleType" />
+            </Principal>
+            <Dependent Role="SchoolVehicles">
+              <PropertyRef Name="idVehicleType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="insert_into_employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idEmployee" Type="numeric" Mode="In" />
+          <Parameter Name="idSchool" Type="numeric" Mode="In" />
+          <Parameter Name="idEmployeeType" Type="numeric" Mode="In" />
+          <Parameter Name="nameEmployee" Type="varchar" Mode="In" />
+          <Parameter Name="gender" Type="varchar" Mode="In" />
+          <Parameter Name="address" Type="varchar" Mode="In" />
+          <Parameter Name="education" Type="varchar" Mode="In" />
+          <Parameter Name="rank" Type="numeric" Mode="In" />
+          <Parameter Name="idSubject" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="insert_into_school" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idSchool" Type="numeric" Mode="In" />
+          <Parameter Name="idSchoolPropertyType" Type="numeric" Mode="In" />
+          <Parameter Name="idSchoolBuildingPropertyType" Type="numeric" Mode="In" />
+          <Parameter Name="nameSchool" Type="varchar" Mode="In" />
+          <Parameter Name="computersAmount" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="insert_into_schoolQuarters" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idSchool" Type="numeric" Mode="In" />
+          <Parameter Name="idQuartersType" Type="numeric" Mode="In" />
+          <Parameter Name="area" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="insert_into_schoolTools" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idSchool" Type="numeric" Mode="In" />
+          <Parameter Name="idToolType" Type="numeric" Mode="In" />
+          <Parameter Name="amount" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="insert_into_schoolVehicles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idSchool" Type="numeric" Mode="In" />
+          <Parameter Name="idVehicleType" Type="numeric" Mode="In" />
+          <Parameter Name="amount" Type="numeric" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SchoolsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SchoolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClassType" EntityType="SchoolsModel.ClassType" />
+          <EntitySet Name="Employee" EntityType="SchoolsModel.Employee" />
+          <EntitySet Name="EmployeeType" EntityType="SchoolsModel.EmployeeType" />
+          <EntitySet Name="PropertyType" EntityType="SchoolsModel.PropertyType" />
+          <EntitySet Name="QuartersType" EntityType="SchoolsModel.QuartersType" />
+          <EntitySet Name="School" EntityType="SchoolsModel.School" />
+          <EntitySet Name="SchoolClass" EntityType="SchoolsModel.SchoolClass" />
+          <EntitySet Name="SchoolQuarters" EntityType="SchoolsModel.SchoolQuarters" />
+          <EntitySet Name="SchoolTools" EntityType="SchoolsModel.SchoolTools" />
+          <EntitySet Name="SchoolVehicles" EntityType="SchoolsModel.SchoolVehicles" />
+          <EntitySet Name="Subj" EntityType="SchoolsModel.Subj" />
+          <EntitySet Name="ToolType" EntityType="SchoolsModel.ToolType" />
+          <EntitySet Name="VehicleType" EntityType="SchoolsModel.VehicleType" />
+          <EntitySet Name="v_classes" EntityType="SchoolsModel.v_classes" />
+          <EntitySet Name="v_classNames" EntityType="SchoolsModel.v_classNames" />
+          <EntitySet Name="v_employees" EntityType="SchoolsModel.v_employees" />
+          <EntitySet Name="v_employeeTypeName" EntityType="SchoolsModel.v_employeeTypeName" />
+          <EntitySet Name="v_propertyNames" EntityType="SchoolsModel.v_propertyNames" />
+          <EntitySet Name="v_quartersNames" EntityType="SchoolsModel.v_quartersNames" />
+          <EntitySet Name="v_schoolQuarters" EntityType="SchoolsModel.v_schoolQuarters" />
+          <EntitySet Name="v_schools" EntityType="SchoolsModel.v_schools" />
+          <EntitySet Name="v_schoolTools" EntityType="SchoolsModel.v_schoolTools" />
+          <EntitySet Name="v_schoolVehicles" EntityType="SchoolsModel.v_schoolVehicles" />
+          <EntitySet Name="v_subjNames" EntityType="SchoolsModel.v_subjNames" />
+          <EntitySet Name="v_toolsNames" EntityType="SchoolsModel.v_toolsNames" />
+          <EntitySet Name="v_vehicleTypeNames" EntityType="SchoolsModel.v_vehicleTypeNames" />
+          <AssociationSet Name="FK_SchoolClass_ClassType" Association="SchoolsModel.FK_SchoolClass_ClassType">
+            <End Role="ClassType" EntitySet="ClassType" />
+            <End Role="SchoolClass" EntitySet="SchoolClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_EmployeeType" Association="SchoolsModel.FK_Employee_EmployeeType">
+            <End Role="EmployeeType" EntitySet="EmployeeType" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_School" Association="SchoolsModel.FK_Employee_School">
+            <End Role="School" EntitySet="School" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Subj" Association="SchoolsModel.FK_Employee_Subj">
+            <End Role="Subj" EntitySet="Subj" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_School_PropertyType" Association="SchoolsModel.FK_School_PropertyType">
+            <End Role="PropertyType" EntitySet="PropertyType" />
+            <End Role="School" EntitySet="School" />
+          </AssociationSet>
+          <AssociationSet Name="FK_School_PropertyType1" Association="SchoolsModel.FK_School_PropertyType1">
+            <End Role="PropertyType" EntitySet="PropertyType" />
+            <End Role="School" EntitySet="School" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolQuarters_QuartersType" Association="SchoolsModel.FK_SchoolQuarters_QuartersType">
+            <End Role="QuartersType" EntitySet="QuartersType" />
+            <End Role="SchoolQuarters" EntitySet="SchoolQuarters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolClass_School" Association="SchoolsModel.FK_SchoolClass_School">
+            <End Role="School" EntitySet="School" />
+            <End Role="SchoolClass" EntitySet="SchoolClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolQuarters_School" Association="SchoolsModel.FK_SchoolQuarters_School">
+            <End Role="School" EntitySet="School" />
+            <End Role="SchoolQuarters" EntitySet="SchoolQuarters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolTools_School" Association="SchoolsModel.FK_SchoolTools_School">
+            <End Role="School" EntitySet="School" />
+            <End Role="SchoolTools" EntitySet="SchoolTools" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolVehicles_School" Association="SchoolsModel.FK_SchoolVehicles_School">
+            <End Role="School" EntitySet="School" />
+            <End Role="SchoolVehicles" EntitySet="SchoolVehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolTools_ToolType" Association="SchoolsModel.FK_SchoolTools_ToolType">
+            <End Role="ToolType" EntitySet="ToolType" />
+            <End Role="SchoolTools" EntitySet="SchoolTools" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchoolVehicles_VehicleType" Association="SchoolsModel.FK_SchoolVehicles_VehicleType">
+            <End Role="VehicleType" EntitySet="VehicleType" />
+            <End Role="SchoolVehicles" EntitySet="SchoolVehicles" />
+          </AssociationSet>
+          <EntitySet Name="District" EntityType="SchoolsModel.District" />
+          <AssociationSet Name="FK_Employee_district" Association="SchoolsModel.FK_Employee_district">
+            <End Role="District" EntitySet="District" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_School_District" Association="SchoolsModel.FK_School_District">
+            <End Role="District" EntitySet="District" />
+            <End Role="School" EntitySet="School" />
+          </AssociationSet>
+          <EntitySet Name="v_q3" EntityType="SchoolsModel.v_q3" />
+          <EntitySet Name="v_q2" EntityType="SchoolsModel.v_q2" />
+        </EntityContainer>
+        <EntityType Name="ClassType">
+          <Key>
+            <PropertyRef Name="idClassType" />
+          </Key>
+          <Property Name="idClassType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="nameClassType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SchoolClass" Relationship="SchoolsModel.FK_SchoolClass_ClassType" FromRole="ClassType" ToRole="SchoolClass" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="idEmployee" />
+          </Key>
+          <Property Name="idEmployee" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+          <Property Name="idSchool" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="idEmployeeType" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="nameEmployee" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="gender" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="address" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="education" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="rank" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="idSubject" Type="Decimal" Precision="2" Scale="0" />
+          <NavigationProperty Name="EmployeeType" Relationship="SchoolsModel.FK_Employee_EmployeeType" FromRole="Employee" ToRole="EmployeeType" />
+          <NavigationProperty Name="School" Relationship="SchoolsModel.FK_Employee_School" FromRole="Employee" ToRole="School" />
+          <NavigationProperty Name="Subj" Relationship="SchoolsModel.FK_Employee_Subj" FromRole="Employee" ToRole="Subj" />
+          <Property Type="Decimal" Name="idDistrict" Precision="2" Scale="0" />
+          <NavigationProperty Name="District" Relationship="SchoolsModel.FK_Employee_district" FromRole="Employee" ToRole="District" />
+        </EntityType>
+        <EntityType Name="EmployeeType">
+          <Key>
+            <PropertyRef Name="idEmployeeType" />
+          </Key>
+          <Property Name="idEmployeeType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="nameEmployeeType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Employee" Relationship="SchoolsModel.FK_Employee_EmployeeType" FromRole="EmployeeType" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="PropertyType">
+          <Key>
+            <PropertyRef Name="idPropertyType" />
+          </Key>
+          <Property Name="idPropertyType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="namePropertyType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="School" Relationship="SchoolsModel.FK_School_PropertyType" FromRole="PropertyType" ToRole="School" />
+          <NavigationProperty Name="School1" Relationship="SchoolsModel.FK_School_PropertyType1" FromRole="PropertyType" ToRole="School" />
+        </EntityType>
+        <EntityType Name="QuartersType">
+          <Key>
+            <PropertyRef Name="idQuartersType" />
+          </Key>
+          <Property Name="idQuartersType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="nameQuartersType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SchoolQuarters" Relationship="SchoolsModel.FK_SchoolQuarters_QuartersType" FromRole="QuartersType" ToRole="SchoolQuarters" />
+        </EntityType>
+        <EntityType Name="School">
+          <Key>
+            <PropertyRef Name="idSchool" />
+          </Key>
+          <Property Name="idSchool" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="idSchoolPropertyType" Type="Decimal" Precision="1" Scale="0" Nullable="true" />
+          <Property Name="idSchoolBuildingPropertyType" Type="Decimal" Precision="1" Scale="0" Nullable="true" />
+          <Property Name="nameSchool" Type="String" MaxLength="100" Unicode="false" FixedLength="false" Nullable="false" />
+          <Property Name="computersAmount" Type="Decimal" Precision="3" Scale="0" Nullable="true" />
+          <NavigationProperty Name="Employee" Relationship="SchoolsModel.FK_Employee_School" FromRole="School" ToRole="Employee" />
+          <NavigationProperty Name="PropertyType" Relationship="SchoolsModel.FK_School_PropertyType" FromRole="School" ToRole="PropertyType" />
+          <NavigationProperty Name="PropertyType1" Relationship="SchoolsModel.FK_School_PropertyType1" FromRole="School" ToRole="PropertyType" />
+          <NavigationProperty Name="SchoolClass" Relationship="SchoolsModel.FK_SchoolClass_School" FromRole="School" ToRole="SchoolClass" />
+          <NavigationProperty Name="SchoolQuarters" Relationship="SchoolsModel.FK_SchoolQuarters_School" FromRole="School" ToRole="SchoolQuarters" />
+          <NavigationProperty Name="SchoolTools" Relationship="SchoolsModel.FK_SchoolTools_School" FromRole="School" ToRole="SchoolTools" />
+          <NavigationProperty Name="SchoolVehicles" Relationship="SchoolsModel.FK_SchoolVehicles_School" FromRole="School" ToRole="SchoolVehicles" />
+          <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="idDistrict" Precision="2" Scale="0" />
+          <NavigationProperty Name="District" Relationship="SchoolsModel.FK_School_District" FromRole="School" ToRole="District" />
+        </EntityType>
+        <EntityType Name="SchoolClass">
+          <Key>
+            <PropertyRef Name="idSchool" />
+            <PropertyRef Name="idClass" />
+          </Key>
+          <Property Name="idSchool" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="idClass" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+          <Property Name="idClassType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="boysAmount" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="girlsAmount" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <NavigationProperty Name="ClassType" Relationship="SchoolsModel.FK_SchoolClass_ClassType" FromRole="SchoolClass" ToRole="ClassType" />
+          <NavigationProperty Name="School" Relationship="SchoolsModel.FK_SchoolClass_School" FromRole="SchoolClass" ToRole="School" />
+          <Property Type="String" Name="nameClass" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SchoolQuarters">
+          <Key>
+            <PropertyRef Name="idSchool" />
+            <PropertyRef Name="idQuartersType" />
+          </Key>
+          <Property Name="idSchool" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="idQuartersType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="area" Type="Decimal" Precision="5" Scale="0" />
+          <NavigationProperty Name="QuartersType" Relationship="SchoolsModel.FK_SchoolQuarters_QuartersType" FromRole="SchoolQuarters" ToRole="QuartersType" />
+          <NavigationProperty Name="School" Relationship="SchoolsModel.FK_SchoolQuarters_School" FromRole="SchoolQuarters" ToRole="School" />
+        </EntityType>
+        <EntityType Name="SchoolTools">
+          <Key>
+            <PropertyRef Name="idSchool" />
+            <PropertyRef Name="idToolType" />
+          </Key>
+          <Property Name="idSchool" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="idToolType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="amount" Type="Decimal" Precision="3" Scale="0" />
+          <NavigationProperty Name="School" Relationship="SchoolsModel.FK_SchoolTools_School" FromRole="SchoolTools" ToRole="School" />
+          <NavigationProperty Name="ToolType" Relationship="SchoolsModel.FK_SchoolTools_ToolType" FromRole="SchoolTools" ToRole="ToolType" />
+        </EntityType>
+        <EntityType Name="SchoolVehicles">
+          <Key>
+            <PropertyRef Name="idSchool" />
+            <PropertyRef Name="idVehicleType" />
+          </Key>
+          <Property Name="idSchool" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="idVehicleType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="amount" Type="Decimal" Precision="2" Scale="0" />
+          <NavigationProperty Name="School" Relationship="SchoolsModel.FK_SchoolVehicles_School" FromRole="SchoolVehicles" ToRole="School" />
+          <NavigationProperty Name="VehicleType" Relationship="SchoolsModel.FK_SchoolVehicles_VehicleType" FromRole="SchoolVehicles" ToRole="VehicleType" />
+        </EntityType>
+        <EntityType Name="Subj">
+          <Key>
+            <PropertyRef Name="idSubject" />
+          </Key>
+          <Property Name="idSubject" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+          <Property Name="nameSubject" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Employee" Relationship="SchoolsModel.FK_Employee_Subj" FromRole="Subj" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="ToolType">
+          <Key>
+            <PropertyRef Name="idToolType" />
+          </Key>
+          <Property Name="idToolType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="nameToolType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SchoolTools" Relationship="SchoolsModel.FK_SchoolTools_ToolType" FromRole="ToolType" ToRole="SchoolTools" />
+        </EntityType>
+        <EntityType Name="VehicleType">
+          <Key>
+            <PropertyRef Name="idVehicleType" />
+          </Key>
+          <Property Name="idVehicleType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="nameVehicleType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SchoolVehicles" Relationship="SchoolsModel.FK_SchoolVehicles_VehicleType" FromRole="VehicleType" ToRole="SchoolVehicles" />
+        </EntityType>
+        <EntityType Name="v_classes">
+          <Key>
+            <PropertyRef Name="Школа" />
+            <PropertyRef Name="Класс" />
+          </Key>
+          <Property Name="Тип_класса" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Число_мальчиков" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+          <Property Name="Число_девочек" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+          <Property Name="Школа" Type="String" MaxLength="100" Unicode="false" FixedLength="false" Nullable="false" />
+          <Property Type="String" Name="Класс" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_classNames">
+          <Key>
+            <PropertyRef Name="nameClassType" />
+          </Key>
+          <Property Name="nameClassType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="v_employees">
+          <Key>
+            <PropertyRef Name="ФИО" />
+            <PropertyRef Name="Адрес" />
+          </Key>
+          <Property Name="ФИО" Type="String" MaxLength="50" Unicode="false" FixedLength="false" Nullable="false" />
+          <Property Name="Пол" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="Адрес" Type="String" MaxLength="200" Unicode="false" FixedLength="false" Nullable="false" />
+          <Property Name="Образование" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Номер_разряда" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="Место_работы" Type="String" MaxLength="100" Unicode="false" FixedLength="false" Nullable="false" />
+          <Property Name="Вид_работника" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Предмет" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="Район" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_employeeTypeName">
+          <Key>
+            <PropertyRef Name="nameEmployeeType" />
+          </Key>
+          <Property Name="nameEmployeeType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="v_propertyNames">
+          <Key>
+            <PropertyRef Name="namePropertyType" />
+          </Key>
+          <Property Name="namePropertyType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="v_quartersNames">
+          <Key>
+            <PropertyRef Name="nameQuartersType" />
+          </Key>
+          <Property Name="nameQuartersType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="v_schoolQuarters">
+          <Key>
+            <PropertyRef Name="Тип_помещений" />
+            <PropertyRef Name="Школа" />
+          </Key>
+          <Property Name="Тип_помещений" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Площадь" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="Школа" Type="String" MaxLength="100" Unicode="false" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_schools">
+          <Key>
+            <PropertyRef Name="Имя_школы" />
+          </Key>
+          <Property Name="Имя_школы" Type="String" MaxLength="100" Unicode="false" FixedLength="false" Nullable="false" />
+          <Property Name="Тип_собственности_школы" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Тип_собственности_здания_школы" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Число_компьютеров" Type="Decimal" Precision="3" Scale="0" />
+          <Property Type="String" Name="Адрес" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Район" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="v_schoolTools">
+          <Key>
+            <PropertyRef Name="Тип_станков" />
+            <PropertyRef Name="Школа" />
+          </Key>
+          <Property Name="Тип_станков" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Количество" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Школа" Type="String" MaxLength="100" Unicode="false" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_schoolVehicles">
+          <Key>
+            <PropertyRef Name="Вид_транспорта" />
+            <PropertyRef Name="Школа" />
+          </Key>
+          <Property Name="Вид_транспорта" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Количество" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="Школа" Type="String" MaxLength="100" Unicode="false" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_subjNames">
+          <Key>
+            <PropertyRef Name="nameSubject" />
+          </Key>
+          <Property Name="nameSubject" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="v_toolsNames">
+          <Key>
+            <PropertyRef Name="nameToolType" />
+          </Key>
+          <Property Name="nameToolType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="v_vehicleTypeNames">
+          <Key>
+            <PropertyRef Name="nameVehicleType" />
+          </Key>
+          <Property Name="nameVehicleType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_SchoolClass_ClassType">
+          <End Role="ClassType" Type="SchoolsModel.ClassType" Multiplicity="1" />
+          <End Role="SchoolClass" Type="SchoolsModel.SchoolClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassType">
+              <PropertyRef Name="idClassType" />
+            </Principal>
+            <Dependent Role="SchoolClass">
+              <PropertyRef Name="idClassType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_EmployeeType">
+          <End Role="EmployeeType" Type="SchoolsModel.EmployeeType" Multiplicity="0..1" />
+          <End Role="Employee" Type="SchoolsModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeType">
+              <PropertyRef Name="idEmployeeType" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="idEmployeeType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_School">
+          <End Role="School" Type="SchoolsModel.School" Multiplicity="0..1" />
+          <End Role="Employee" Type="SchoolsModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="idSchool" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="idSchool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Subj">
+          <End Role="Subj" Type="SchoolsModel.Subj" Multiplicity="0..1" />
+          <End Role="Employee" Type="SchoolsModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subj">
+              <PropertyRef Name="idSubject" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="idSubject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_School_PropertyType">
+          <End Role="PropertyType" Type="SchoolsModel.PropertyType" Multiplicity="0..1" />
+          <End Role="School" Type="SchoolsModel.School" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyType">
+              <PropertyRef Name="idPropertyType" />
+            </Principal>
+            <Dependent Role="School">
+              <PropertyRef Name="idSchoolPropertyType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_School_PropertyType1">
+          <End Role="PropertyType" Type="SchoolsModel.PropertyType" Multiplicity="0..1" />
+          <End Role="School" Type="SchoolsModel.School" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyType">
+              <PropertyRef Name="idPropertyType" />
+            </Principal>
+            <Dependent Role="School">
+              <PropertyRef Name="idSchoolBuildingPropertyType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolQuarters_QuartersType">
+          <End Role="QuartersType" Type="SchoolsModel.QuartersType" Multiplicity="1" />
+          <End Role="SchoolQuarters" Type="SchoolsModel.SchoolQuarters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuartersType">
+              <PropertyRef Name="idQuartersType" />
+            </Principal>
+            <Dependent Role="SchoolQuarters">
+              <PropertyRef Name="idQuartersType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolClass_School">
+          <End Role="School" Type="SchoolsModel.School" Multiplicity="1" />
+          <End Role="SchoolClass" Type="SchoolsModel.SchoolClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="idSchool" />
+            </Principal>
+            <Dependent Role="SchoolClass">
+              <PropertyRef Name="idSchool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolQuarters_School">
+          <End Role="School" Type="SchoolsModel.School" Multiplicity="1" />
+          <End Role="SchoolQuarters" Type="SchoolsModel.SchoolQuarters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="idSchool" />
+            </Principal>
+            <Dependent Role="SchoolQuarters">
+              <PropertyRef Name="idSchool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolTools_School">
+          <End Role="School" Type="SchoolsModel.School" Multiplicity="1" />
+          <End Role="SchoolTools" Type="SchoolsModel.SchoolTools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="idSchool" />
+            </Principal>
+            <Dependent Role="SchoolTools">
+              <PropertyRef Name="idSchool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolVehicles_School">
+          <End Role="School" Type="SchoolsModel.School" Multiplicity="1" />
+          <End Role="SchoolVehicles" Type="SchoolsModel.SchoolVehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="School">
+              <PropertyRef Name="idSchool" />
+            </Principal>
+            <Dependent Role="SchoolVehicles">
+              <PropertyRef Name="idSchool" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolTools_ToolType">
+          <End Role="ToolType" Type="SchoolsModel.ToolType" Multiplicity="1" />
+          <End Role="SchoolTools" Type="SchoolsModel.SchoolTools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ToolType">
+              <PropertyRef Name="idToolType" />
+            </Principal>
+            <Dependent Role="SchoolTools">
+              <PropertyRef Name="idToolType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchoolVehicles_VehicleType">
+          <End Role="VehicleType" Type="SchoolsModel.VehicleType" Multiplicity="1" />
+          <End Role="SchoolVehicles" Type="SchoolsModel.SchoolVehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleType">
+              <PropertyRef Name="idVehicleType" />
+            </Principal>
+            <Dependent Role="SchoolVehicles">
+              <PropertyRef Name="idVehicleType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="idDistrict" />
+          </Key>
+          <Property Type="Decimal" Name="idDistrict" Nullable="false" Precision="2" Scale="0" />
+          <Property Type="String" Name="nameDistrict" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="SchoolsModel.FK_Employee_district" FromRole="District" ToRole="Employee" />
+          <NavigationProperty Name="School" Relationship="SchoolsModel.FK_School_District" FromRole="District" ToRole="School" />
+        </EntityType>
+        <Association Name="FK_Employee_district">
+          <End Type="SchoolsModel.District" Role="District" Multiplicity="0..1" />
+          <End Type="SchoolsModel.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="District">
+              <PropertyRef Name="idDistrict" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="idDistrict" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_School_District">
+          <End Type="SchoolsModel.District" Role="District" Multiplicity="0..1" />
+          <End Type="SchoolsModel.School" Role="School" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="District">
+              <PropertyRef Name="idDistrict" />
+            </Principal>
+            <Dependent Role="School">
+              <PropertyRef Name="idDistrict" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="v_q3">
+          <Key>
+            <PropertyRef Name="Тип_собственности_школы" />
+            <PropertyRef Name="Тип_собственности_здания_школы" />
+          </Key>
+          <Property Type="String" Name="Имя_школы" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Тип_собственности_школы" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Тип_собственности_здания_школы" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Адрес" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Район" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Число_компьютеров" Precision="3" Scale="0" />
+        </EntityType>
+        <EntityType Name="v_q2">
+          <Key>
+            <PropertyRef Name="Школа" />
+          </Key>
+          <Property Type="String" Name="Школа" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Адрес" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ФИО_директора" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SchoolsModelStoreContainer" CdmEntityContainer="SchoolEntities">
+          <EntitySetMapping Name="ClassType">
+            <EntityTypeMapping TypeName="SchoolsModel.ClassType">
+              <MappingFragment StoreEntitySet="ClassType">
+                <ScalarProperty Name="idClassType" ColumnName="idClassType" />
+                <ScalarProperty Name="nameClassType" ColumnName="nameClassType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="SchoolsModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="idDistrict" ColumnName="idDistrict" />
+                <ScalarProperty Name="idEmployee" ColumnName="idEmployee" />
+                <ScalarProperty Name="idSchool" ColumnName="idSchool" />
+                <ScalarProperty Name="idEmployeeType" ColumnName="idEmployeeType" />
+                <ScalarProperty Name="nameEmployee" ColumnName="nameEmployee" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="education" ColumnName="education" />
+                <ScalarProperty Name="rank" ColumnName="rank" />
+                <ScalarProperty Name="idSubject" ColumnName="idSubject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeType">
+            <EntityTypeMapping TypeName="SchoolsModel.EmployeeType">
+              <MappingFragment StoreEntitySet="EmployeeType">
+                <ScalarProperty Name="idEmployeeType" ColumnName="idEmployeeType" />
+                <ScalarProperty Name="nameEmployeeType" ColumnName="nameEmployeeType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyType">
+            <EntityTypeMapping TypeName="SchoolsModel.PropertyType">
+              <MappingFragment StoreEntitySet="PropertyType">
+                <ScalarProperty Name="idPropertyType" ColumnName="idPropertyType" />
+                <ScalarProperty Name="namePropertyType" ColumnName="namePropertyType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuartersType">
+            <EntityTypeMapping TypeName="SchoolsModel.QuartersType">
+              <MappingFragment StoreEntitySet="QuartersType">
+                <ScalarProperty Name="idQuartersType" ColumnName="idQuartersType" />
+                <ScalarProperty Name="nameQuartersType" ColumnName="nameQuartersType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="School">
+            <EntityTypeMapping TypeName="SchoolsModel.School">
+              <MappingFragment StoreEntitySet="School">
+                <ScalarProperty Name="idDistrict" ColumnName="idDistrict" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="idSchool" ColumnName="idSchool" />
+                <ScalarProperty Name="idSchoolPropertyType" ColumnName="idSchoolPropertyType" />
+                <ScalarProperty Name="idSchoolBuildingPropertyType" ColumnName="idSchoolBuildingPropertyType" />
+                <ScalarProperty Name="nameSchool" ColumnName="nameSchool" />
+                <ScalarProperty Name="computersAmount" ColumnName="computersAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchoolClass">
+            <EntityTypeMapping TypeName="SchoolsModel.SchoolClass">
+              <MappingFragment StoreEntitySet="SchoolClass">
+                <ScalarProperty Name="nameClass" ColumnName="nameClass" />
+                <ScalarProperty Name="idSchool" ColumnName="idSchool" />
+                <ScalarProperty Name="idClass" ColumnName="idClass" />
+                <ScalarProperty Name="idClassType" ColumnName="idClassType" />
+                <ScalarProperty Name="boysAmount" ColumnName="boysAmount" />
+                <ScalarProperty Name="girlsAmount" ColumnName="girlsAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchoolQuarters">
+            <EntityTypeMapping TypeName="SchoolsModel.SchoolQuarters">
+              <MappingFragment StoreEntitySet="SchoolQuarters">
+                <ScalarProperty Name="idSchool" ColumnName="idSchool" />
+                <ScalarProperty Name="idQuartersType" ColumnName="idQuartersType" />
+                <ScalarProperty Name="area" ColumnName="area" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchoolTools">
+            <EntityTypeMapping TypeName="SchoolsModel.SchoolTools">
+              <MappingFragment StoreEntitySet="SchoolTools">
+                <ScalarProperty Name="idSchool" ColumnName="idSchool" />
+                <ScalarProperty Name="idToolType" ColumnName="idToolType" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchoolVehicles">
+            <EntityTypeMapping TypeName="SchoolsModel.SchoolVehicles">
+              <MappingFragment StoreEntitySet="SchoolVehicles">
+                <ScalarProperty Name="idSchool" ColumnName="idSchool" />
+                <ScalarProperty Name="idVehicleType" ColumnName="idVehicleType" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subj">
+            <EntityTypeMapping TypeName="SchoolsModel.Subj">
+              <MappingFragment StoreEntitySet="Subj">
+                <ScalarProperty Name="idSubject" ColumnName="idSubject" />
+                <ScalarProperty Name="nameSubject" ColumnName="nameSubject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ToolType">
+            <EntityTypeMapping TypeName="SchoolsModel.ToolType">
+              <MappingFragment StoreEntitySet="ToolType">
+                <ScalarProperty Name="idToolType" ColumnName="idToolType" />
+                <ScalarProperty Name="nameToolType" ColumnName="nameToolType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleType">
+            <EntityTypeMapping TypeName="SchoolsModel.VehicleType">
+              <MappingFragment StoreEntitySet="VehicleType">
+                <ScalarProperty Name="idVehicleType" ColumnName="idVehicleType" />
+                <ScalarProperty Name="nameVehicleType" ColumnName="nameVehicleType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_classes">
+            <EntityTypeMapping TypeName="SchoolsModel.v_classes">
+              <MappingFragment StoreEntitySet="v_classes">
+                <ScalarProperty Name="Класс" ColumnName="Класс" />
+                <ScalarProperty Name="Тип_класса" ColumnName="Тип класса" />
+                <ScalarProperty Name="Число_мальчиков" ColumnName="Число мальчиков" />
+                <ScalarProperty Name="Число_девочек" ColumnName="Число девочек" />
+                <ScalarProperty Name="Школа" ColumnName="Школа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_classNames">
+            <EntityTypeMapping TypeName="SchoolsModel.v_classNames">
+              <MappingFragment StoreEntitySet="v_classNames">
+                <ScalarProperty Name="nameClassType" ColumnName="nameClassType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_employees">
+            <EntityTypeMapping TypeName="SchoolsModel.v_employees">
+              <MappingFragment StoreEntitySet="v_employees">
+                <ScalarProperty Name="Район" ColumnName="Район" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Пол" ColumnName="Пол" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="Образование" ColumnName="Образование" />
+                <ScalarProperty Name="Номер_разряда" ColumnName="Номер разряда" />
+                <ScalarProperty Name="Место_работы" ColumnName="Место работы" />
+                <ScalarProperty Name="Вид_работника" ColumnName="Вид работника" />
+                <ScalarProperty Name="Предмет" ColumnName="Предмет" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_employeeTypeName">
+            <EntityTypeMapping TypeName="SchoolsModel.v_employeeTypeName">
+              <MappingFragment StoreEntitySet="v_employeeTypeName">
+                <ScalarProperty Name="nameEmployeeType" ColumnName="nameEmployeeType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_propertyNames">
+            <EntityTypeMapping TypeName="SchoolsModel.v_propertyNames">
+              <MappingFragment StoreEntitySet="v_propertyNames">
+                <ScalarProperty Name="namePropertyType" ColumnName="namePropertyType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_quartersNames">
+            <EntityTypeMapping TypeName="SchoolsModel.v_quartersNames">
+              <MappingFragment StoreEntitySet="v_quartersNames">
+                <ScalarProperty Name="nameQuartersType" ColumnName="nameQuartersType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_schoolQuarters">
+            <EntityTypeMapping TypeName="SchoolsModel.v_schoolQuarters">
+              <MappingFragment StoreEntitySet="v_schoolQuarters">
+                <ScalarProperty Name="Тип_помещений" ColumnName="Тип помещений" />
+                <ScalarProperty Name="Площадь" ColumnName="Площадь" />
+                <ScalarProperty Name="Школа" ColumnName="Школа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_schools">
+            <EntityTypeMapping TypeName="SchoolsModel.v_schools">
+              <MappingFragment StoreEntitySet="v_schools">
+                <ScalarProperty Name="Район" ColumnName="Район" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="Имя_школы" ColumnName="Имя школы" />
+                <ScalarProperty Name="Тип_собственности_школы" ColumnName="Тип собственности школы" />
+                <ScalarProperty Name="Тип_собственности_здания_школы" ColumnName="Тип собственности здания школы" />
+                <ScalarProperty Name="Число_компьютеров" ColumnName="Число компьютеров" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_schoolTools">
+            <EntityTypeMapping TypeName="SchoolsModel.v_schoolTools">
+              <MappingFragment StoreEntitySet="v_schoolTools">
+                <ScalarProperty Name="Тип_станков" ColumnName="Тип станков" />
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="Школа" ColumnName="Школа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_schoolVehicles">
+            <EntityTypeMapping TypeName="SchoolsModel.v_schoolVehicles">
+              <MappingFragment StoreEntitySet="v_schoolVehicles">
+                <ScalarProperty Name="Вид_транспорта" ColumnName="Вид транспорта" />
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="Школа" ColumnName="Школа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_subjNames">
+            <EntityTypeMapping TypeName="SchoolsModel.v_subjNames">
+              <MappingFragment StoreEntitySet="v_subjNames">
+                <ScalarProperty Name="nameSubject" ColumnName="nameSubject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_toolsNames">
+            <EntityTypeMapping TypeName="SchoolsModel.v_toolsNames">
+              <MappingFragment StoreEntitySet="v_toolsNames">
+                <ScalarProperty Name="nameToolType" ColumnName="nameToolType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_vehicleTypeNames">
+            <EntityTypeMapping TypeName="SchoolsModel.v_vehicleTypeNames">
+              <MappingFragment StoreEntitySet="v_vehicleTypeNames">
+                <ScalarProperty Name="nameVehicleType" ColumnName="nameVehicleType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="District">
+            <EntityTypeMapping TypeName="SchoolsModel.District">
+              <MappingFragment StoreEntitySet="District">
+                <ScalarProperty Name="nameDistrict" ColumnName="nameDistrict" />
+                <ScalarProperty Name="idDistrict" ColumnName="idDistrict" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_q3">
+            <EntityTypeMapping TypeName="SchoolsModel.v_q3">
+              <MappingFragment StoreEntitySet="v_q3">
+                <ScalarProperty Name="Число_компьютеров" ColumnName="Число компьютеров" />
+                <ScalarProperty Name="Район" ColumnName="Район" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="Тип_собственности_здания_школы" ColumnName="Тип собственности здания школы" />
+                <ScalarProperty Name="Тип_собственности_школы" ColumnName="Тип собственности школы" />
+                <ScalarProperty Name="Имя_школы" ColumnName="Имя школы" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_q2">
+            <EntityTypeMapping TypeName="SchoolsModel.v_q2">
+              <MappingFragment StoreEntitySet="v_q2">
+                <ScalarProperty Name="ФИО_директора" ColumnName="ФИО директора" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="Школа" ColumnName="Школа" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1" ZoomLevel="67">
+        <EntityTypeShape EntityType="SchoolsModel.ClassType" Width="1.5" PointX="6" PointY="12.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.Employee" Width="1.5" PointX="5.25" PointY="7.25" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.EmployeeType" Width="1.5" PointX="3" PointY="11.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.PropertyType" Width="1.5" PointX="0.75" PointY="8" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.QuartersType" Width="1.5" PointX="6" PointY="1.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.School" Width="1.5" PointX="3" PointY="7.25" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.SchoolClass" Width="1.5" PointX="8.25" PointY="7.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.SchoolQuarters" Width="1.5" PointX="8.25" PointY="4.875" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.SchoolTools" Width="1.5" PointX="8.25" PointY="10.875" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.SchoolVehicles" Width="1.5" PointX="5.25" PointY="3.875" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.Subj" Width="1.5" PointX="3" PointY="14.25" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.ToolType" Width="1.5" PointX="6" PointY="15.125" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.VehicleType" Width="1.5" PointX="3" PointY="4.125" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_classes" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9802864583333331" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_classNames" Width="1.5" PointX="2.75" PointY="0.75" Height="1.2110807291666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_employees" Width="1.5" PointX="8.75" PointY="0.75" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_employeeTypeName" Width="1.5" PointX="10.75" PointY="0.75" Height="1.2110807291666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_propertyNames" Width="1.5" PointX="10.75" PointY="2.75" Height="1.2110807291666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_quartersNames" Width="1.5" PointX="10.75" PointY="4.75" Height="1.2110807291666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_schoolQuarters" Width="1.5" PointX="10.75" PointY="6.75" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_schools" Width="1.5" PointX="10.75" PointY="9.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_schoolTools" Width="1.5" PointX="12.75" PointY="0.75" Height="1.5956835937500067" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_schoolVehicles" Width="1.5" PointX="12.75" PointY="3.75" Height="1.5956835937500102" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_subjNames" Width="1.5" PointX="12.75" PointY="6.75" Height="1.2110807291666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_toolsNames" Width="1.5" PointX="12.75" PointY="8.75" Height="1.2110807291666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolsModel.v_vehicleTypeNames" Width="1.5" PointX="12.75" PointY="10.75" Height="1.2110807291666674" IsExpanded="true" />
+        <AssociationConnector Association="SchoolsModel.FK_SchoolClass_ClassType" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="12.126152846153847" />
+          <ConnectorPoint PointX="7.6910744349011209" PointY="11.935078411252725" />
+          <ConnectorPoint PointX="7.8089255650988791" PointY="11.817227281054969" />
+          <ConnectorPoint PointX="7.875" PointY="11.751152846153847" />
+          <ConnectorPoint PointX="7.875" PointY="9.416204458408556" />
+          <ConnectorPoint PointX="8.25" PointY="9.416204458408556" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_Employee_EmployeeType" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.96875" />
+          <ConnectorPoint PointX="5.324866979166667" PointY="11.96875" />
+          <ConnectorPoint PointX="5.491533645833333" PointY="11.96875" />
+          <ConnectorPoint PointX="5.628905625" PointY="11.96875" />
+          <ConnectorPoint PointX="5.628905625" PointY="10.960999348958332" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_Employee_School" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="9.1054996744791659" />
+          <ConnectorPoint PointX="5.25" PointY="9.1054996744791659" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_Employee_Subj" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.65625" />
+          <ConnectorPoint PointX="5.4082003125" PointY="14.65625" />
+          <ConnectorPoint PointX="5.4082003125" PointY="10.960999348958332" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_School_PropertyType" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.1487406412760421" />
+          <ConnectorPoint PointX="3" PointY="9.1487406412760421" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_School_PropertyType1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.5118703206380211" />
+          <ConnectorPoint PointX="3" PointY="8.5118703206380211" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_SchoolQuarters_QuartersType" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.15625" PointY="2.7206835937499996" />
+          <ConnectorPoint PointX="7.15625" PointY="5.8651432291666659" />
+          <ConnectorPoint PointX="8.25" PointY="5.8651432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_SchoolClass_School" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.1249994999999995" PointY="7.25" />
+          <ConnectorPoint PointX="4.1249994999999995" PointY="7" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="6.9999999999999991" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="7" />
+          <ConnectorPoint PointX="7.875" PointY="7" />
+          <ConnectorPoint PointX="7.875" PointY="8.5518502292042768" />
+          <ConnectorPoint PointX="8.25" PointY="8.5518502292042768" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_SchoolQuarters_School" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.53124775" PointY="7.25" />
+          <ConnectorPoint PointX="3.53124775" PointY="6.1052864583333317" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="6.1052864583333308" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="6.1052864583333317" />
+          <ConnectorPoint PointX="7.875" PointY="6.1052864583333317" />
+          <ConnectorPoint PointX="7.875" PointY="5.8651432291666659" />
+          <ConnectorPoint PointX="8.25" PointY="5.8651432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_SchoolTools_School" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="11.15330078125" />
+          <ConnectorPoint PointX="3.75" PointY="11.625" />
+          <ConnectorPoint PointX="4.0729186666666672" PointY="11.625" />
+          <ConnectorPoint PointX="4.2395853333333333" PointY="11.625" />
+          <ConnectorPoint PointX="4.75" PointY="11.625" />
+          <ConnectorPoint PointX="4.75" PointY="11.496124674479166" />
+          <ConnectorPoint PointX="5.324866979166667" PointY="11.496124674479166" />
+          <ConnectorPoint PointX="5.491533645833333" PointY="11.496124674479166" />
+          <ConnectorPoint PointX="5.5455722916666668" PointY="11.496124674479166" />
+          <ConnectorPoint PointX="5.7122389583333328" PointY="11.496124674479166" />
+          <ConnectorPoint PointX="5.7311219791666668" PointY="11.496124674479166" />
+          <ConnectorPoint PointX="5.8977886458333328" PointY="11.496124674479166" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="11.496124674479166" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="11.496124674479166" />
+          <ConnectorPoint PointX="8.25" PointY="11.496124674479166" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_SchoolVehicles_School" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="7.25" />
+          <ConnectorPoint PointX="4.875" PointY="6.875" />
+          <ConnectorPoint PointX="4.875" PointY="4.8651432291666659" />
+          <ConnectorPoint PointX="5.25" PointY="4.8651432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_SchoolTools_ToolType" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="15.922841796875002" />
+          <ConnectorPoint PointX="9" PointY="15.922841796875002" />
+          <ConnectorPoint PointX="9" PointY="12.855286458333332" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_SchoolVehicles_VehicleType" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="5.3554134114583345" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="5.3554134114583336" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="5.3554134114583345" />
+          <ConnectorPoint PointX="5.25" PointY="5.3554134114583345" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SchoolsModel.District" Width="1.5" PointX="10.375" PointY="12.875" Height="1.595683593749996" />
+        <AssociationConnector Association="SchoolsModel.FK_Employee_district" >
+          <ConnectorPoint PointX="10.375" PointY="14.219716796875" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="14.219716796875" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="14.219716796875" />
+          <ConnectorPoint PointX="5.8144553125" PointY="14.219716796875" />
+          <ConnectorPoint PointX="5.8144553125" PointY="10.960999348958332" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolsModel.FK_School_District" >
+          <ConnectorPoint PointX="10.375" PointY="13.516106398437499" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="13.516106398437499" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="13.516106398437499" />
+          <ConnectorPoint PointX="7.75" PointY="13.516106398437499" />
+          <ConnectorPoint PointX="7.75" PointY="11.75" />
+          <ConnectorPoint PointX="5.8977886458333328" PointY="11.75" />
+          <ConnectorPoint PointX="5.7311219791666668" PointY="11.75" />
+          <ConnectorPoint PointX="5.7122389583333328" PointY="11.75" />
+          <ConnectorPoint PointX="5.5455722916666668" PointY="11.75" />
+          <ConnectorPoint PointX="5.491533645833333" PointY="11.75" />
+          <ConnectorPoint PointX="5.324866979166667" PointY="11.75" />
+          <ConnectorPoint PointX="4.156252" PointY="11.75" />
+          <ConnectorPoint PointX="4.156252" PointY="11.15330078125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SchoolsModel.v_q3" Width="1.5" PointX="14.375" PointY="12.75" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="SchoolsModel.v_q2" Width="1.5" PointX="15.375" PointY="0.75" Height="1.5956835937500102" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

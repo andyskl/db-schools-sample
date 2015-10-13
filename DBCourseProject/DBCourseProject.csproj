@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFC5F2B6-C583-4FDC-8F8B-28198B82D5D1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DBCourseProject</RootNamespace>
+    <AssemblyName>DBCourseProject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasicSimpleEntity.cs" />
+    <Compile Include="CapacityOverflowException.cs" />
+    <Compile Include="ClassEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassEditForm.Designer.cs">
+      <DependentUpon>ClassEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComputerSchoolsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComputerSchoolsForm.Designer.cs">
+      <DependentUpon>ComputerSchoolsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCustomEntity.cs" />
+    <Compile Include="EmployessEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployessEditForm.Designer.cs">
+      <DependentUpon>EmployessEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoHighClassesSchoolsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoHighClassesSchoolsForm.Designer.cs">
+      <DependentUpon>NoHighClassesSchoolsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolClassCustomEntity.cs" />
+    <Compile Include="ClassTypeSimpleEntity.cs" />
+    <Compile Include="CustomDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomEntity.cs" />
+    <Compile Include="CustomListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeTypeSimpleEntity.cs" />
+    <Compile Include="EmptyValueException.cs" />
+    <Compile Include="EntitiesHolder.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IListingControl.cs" />
+    <Compile Include="LongArgumentException.cs" />
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NoSuchValueException.cs" />
+    <Compile Include="PropertyTypeSimpleEntity.cs" />
+    <Compile Include="SchoolCustomEntity.cs" />
+    <Compile Include="SchoolEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchoolEditForm.Designer.cs">
+      <DependentUpon>SchoolEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolQuartersEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchoolQuartersEditForm.Designer.cs">
+      <DependentUpon>SchoolQuartersEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolQuartersCustomEntity.cs" />
+    <Compile Include="SchoolToolsCustomEntity.cs" />
+    <Compile Include="SchoolToolsEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchoolToolsEditForm.Designer.cs">
+      <DependentUpon>SchoolToolsEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolVehiclesCustomEntity.cs" />
+    <Compile Include="SchoolVehiclesEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchoolVehiclesEditForm.Designer.cs">
+      <DependentUpon>SchoolVehiclesEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DistrictSimpleEntity.cs" />
+    <Compile Include="SimpleIOManager.cs" />
+    <Compile Include="ISimpleEntity.cs" />
+    <Compile Include="NoIndexException.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleDataListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleDataListForm.Designer.cs">
+      <DependentUpon>SimpleDataListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleInputForm.Designer.cs">
+      <DependentUpon>SimpleInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuartersTypeSimpleEntity.cs" />
+    <Compile Include="SubjectSimpleEntity.cs" />
+    <Compile Include="TeachersInDistrictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeachersInDistrictForm.Designer.cs">
+      <DependentUpon>TeachersInDistrictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolTypeSimpleEntity.cs" />
+    <Compile Include="ValueAlreadyExistsException.cs" />
+    <Compile Include="VehicleTypeSimpleEntity.cs" />
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassEditForm.resx">
+      <DependentUpon>ClassEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComputerSchoolsForm.resx">
+      <DependentUpon>ComputerSchoolsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployessEditForm.resx">
+      <DependentUpon>EmployessEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoHighClassesSchoolsForm.resx">
+      <DependentUpon>NoHighClassesSchoolsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SchoolEditForm.resx">
+      <DependentUpon>SchoolEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchoolQuartersEditForm.resx">
+      <DependentUpon>SchoolQuartersEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchoolToolsEditForm.resx">
+      <DependentUpon>SchoolToolsEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchoolVehiclesEditForm.resx">
+      <DependentUpon>SchoolVehiclesEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleDataListForm.resx">
+      <DependentUpon>SimpleDataListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleInputForm.resx">
+      <DependentUpon>SimpleInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeachersInDistrictForm.resx">
+      <DependentUpon>TeachersInDistrictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\SchoolEntities.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
